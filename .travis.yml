@@ -2,4 +2,4 @@ language: python
 python:
   - "3.6"
 script:
-  - python practice.py
+  - python practice.py < travisInput.txt
