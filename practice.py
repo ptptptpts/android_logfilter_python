@@ -26,10 +26,25 @@ def printLog(filename):
         print(line)
     f.close()
 
+def mainReadFile():
+    fileName = input("Input file name :")
 
-if __name__ == '__main__':
+def mainLogcat():
     filename = 'logcat_' + datetime.datetime.now().strftime('%Y%m%d%H%M%S') + '.txt'
     tLogcat = threading.Thread(target=getLogcat, daemon=True, args=(filename,))
     tLogcat.start()
     waitFile(filename)
     printLog(filename)
+
+def menu():
+    print("1.Read Logcat from File")
+    print("2.Read Logcat from Device")
+    select = input(":")
+    if select == 1:
+        mainReadFile()
+    elif select == 2:
+        mainLogcat()
+
+
+if __name__ == '__main__':
+    menu()
