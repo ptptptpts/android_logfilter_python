@@ -5,6 +5,8 @@ import time
 
 from os.path import isfile
 
+from gevent.libev.corecext import sys
+
 
 def getLogcat(filename):
     print("Run logcat on daemon thread")
@@ -39,11 +41,17 @@ def mainLogcat():
 def menu():
     print("1.Read Logcat from File")
     print("2.Read Logcat from Device")
+    print("3.Exit")
     select = input(":")
+
     if select == 1:
         mainReadFile()
+
     elif select == 2:
         mainLogcat()
+
+    elif select == 3:
+        sys.exit(1)
 
 
 if __name__ == '__main__':
