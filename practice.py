@@ -50,7 +50,7 @@ def menu():
         mainLogcat()
 
     elif select == 3:
-        exit(1)
+        exit(0)
 
     else:
         print("select invalid input")
