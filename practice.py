@@ -26,7 +26,9 @@ def printLog(filename):
     f.close()
 
 def mainReadFile():
-    fileName = input("Input file name :")
+    print("Input file name")
+    fileName = input(":")
+    printLog(fileName)
 
 def mainLogcat():
     filename = 'logcat_' + datetime.datetime.now().strftime('%Y%m%d%H%M%S') + '.txt'
@@ -39,7 +41,7 @@ def menu():
     print("1.Read Logcat from File")
     print("2.Read Logcat from Device")
     print("3.Exit")
-    select = input(":")
+    select = int(input(":"))
 
     if select == 1:
         mainReadFile()
@@ -49,6 +51,9 @@ def menu():
 
     elif select == 3:
         exit(1)
+
+    else:
+        print("select invalid input")
 
 
 if __name__ == '__main__':
